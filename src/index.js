@@ -3,7 +3,7 @@ function displayEverything(response) {
   let temperature = Math.round(response.data.temperature.current);
   let cityElement = document.querySelector("#current-city");
   let wind = Math.round(response.data.wind.speed);
-  let humidity = Math.round(response.data.tempeture.humidity);
+  let humidity = Math.round(response.data.temperature.humidity);
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = temperature;
   windElement.innerHTML = wind;
