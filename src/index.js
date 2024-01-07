@@ -23,6 +23,14 @@ function displayEverything(response) {
   iconElement.alt = iconDescription;
 }
 
+function fetchDataForDefaultCity() {
+  let defaultCity = "Malmö";
+  let apiKey = "b2a5adcct04b33178913oc335f405433";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${defaultCity}&key=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayEverything);
+}
+
 function search(event) {
   event.preventDefault();
   let searchInputElement = document.querySelector("#search-input");
@@ -67,3 +75,4 @@ let currentDateElement = document.querySelector("#current-date");
 let currentDate = new Date();
 
 currentDateElement.innerHTML = formatDate(currentDate);
+window.addEventListener("load", fetchDataForDefaultCity);
