@@ -2,16 +2,25 @@ function displayEverything(response) {
   let temperatureElement = document.querySelector("#current-temperature");
   let temperature = Math.round(response.data.temperature.current);
   let cityElement = document.querySelector("#current-city");
+  let windElement = document.querySelector("#windElement");
+  let humidityElement = document.querySelector("#humidityElement");
+  let conditionElement = document.querySelector("#conditionElement");
+  let iconElement = document.querySelector("#iconElement");
+
   let wind = Math.round(response.data.wind.speed);
   let humidity = Math.round(response.data.temperature.humidity);
   let condition = response.data.condition.description;
   let iconUrl = response.data.condition.icon_url;
+  let iconDescription = response.data.condition.icon;
+
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = temperature;
-  windElement.innerHTML = wind + "km/h";
+  windElement.innerHTML = wind + " km/h";
   humidityElement.innerHTML = humidity + "%";
-  conditionELement.innerHTML = description;
+  conditionElement.innerHTML = condition;
+
   iconElement.src = iconUrl;
+  iconElement.alt = iconDescription;
 }
 
 function search(event) {
@@ -54,7 +63,7 @@ function formatDate(date) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
-let currentDateELement = document.querySelector("#current-date");
+let currentDateElement = document.querySelector("#current-date");
 let currentDate = new Date();
 
-currentDateELement.innerHTML = formatDate(currentDate);
+currentDateElement.innerHTML = formatDate(currentDate);
