@@ -4,10 +4,13 @@ function displayEverything(response) {
   let cityElement = document.querySelector("#current-city");
   let wind = Math.round(response.data.wind.speed);
   let humidity = Math.round(response.data.temperature.humidity);
+  let condition =response.data.condition.description;
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = temperature;
   windElement.innerHTML = wind;
   humidityElement.innerHTML = humidity;
+  conditionELement.innerHTML= description;
+  
 }
 
 function search(event) {
