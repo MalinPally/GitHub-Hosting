@@ -5,11 +5,13 @@ function displayEverything(response) {
   let wind = Math.round(response.data.wind.speed);
   let humidity = Math.round(response.data.temperature.humidity);
   let condition = response.data.condition.description;
+  let iconUrl = response.data.condition.icon_url;
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = temperature;
   windElement.innerHTML = wind + "km/h";
   humidityElement.innerHTML = humidity + "%";
   conditionELement.innerHTML = description;
+  iconElement.src = iconUrl;
 }
 
 function search(event) {
