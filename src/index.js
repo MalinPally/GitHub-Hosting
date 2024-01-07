@@ -21,6 +21,9 @@ function displayEverything(response) {
 
   iconElement.src = iconUrl;
   iconElement.alt = iconDescription;
+
+  let weatherDetails = document.getElementById("weatherDetails");
+  weatherDetails.style.display = "block";
 }
 
 function fetchDataForDefaultCity() {
